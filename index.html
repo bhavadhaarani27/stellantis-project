@@ -2,66 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EHE Quality Review | May 2026</title>
-  <style>
-    :root{--navy:#0b1638;--blue:#16367f;--cyan:#57d6ff;--side:175px}
-    *{box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;margin:0;background:#0a1024;font-family:"Segoe UI",Arial,sans-serif}
-    .sidebar{position:fixed;inset:0 auto 0 0;width:var(--side);padding:12px 8px 58px;background:linear-gradient(180deg,#050b22,#10265e);color:#fff;z-index:2;overflow:auto}
-    .brand{padding:2px 7px 10px;border-bottom:1px solid #ffffff25;margin-bottom:8px}.brand b{display:block;font-size:16px}.brand span{font-size:10px;color:#b9cdfa}
-    .nav-link{display:flex;justify-content:space-between;gap:8px;padding:8px;margin:2px 0;border-left:3px solid transparent;border-radius:6px;color:#dbe7ff;text-decoration:none;font-size:12px;cursor:pointer}
-    .nav-link:hover,.nav-link.active{background:#ffffff17;border-left-color:var(--cyan);color:#fff}.nav-link small{color:#8eb5ff;font-size:10px}
-    main{position:fixed;left:var(--side);right:0;top:0;bottom:0;background:#10182b;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    #slideImage{width:100%;height:100%;object-fit:contain}.slide-number{position:fixed;right:10px;top:8px;padding:4px 7px;border-radius:999px;background:#091942d9;color:#fff;font-size:10px;z-index:3}
-    .updated{position:fixed;left:calc(var(--side) + 28px);bottom:24px;padding:8px 13px;border:1px solid #71dcff;border-radius:8px;background:#0b1638dd;color:#fff;font-size:clamp(12px,1.2vw,17px);font-weight:700;z-index:3}
-    .controls{position:fixed;left:calc(var(--side) + 8px);bottom:10px;width:159px;display:grid;grid-template-columns:38px 1fr 38px;gap:5px;align-items:center;z-index:4}
-    .controls button{height:34px;border:1px solid #7895d4;border-radius:6px;background:#132d69;color:#fff;font-size:18px;cursor:pointer}.controls button:hover{background:#1e438f}
-    .counter{text-align:center;color:#dbe7ff;font-size:11px;font-weight:700}
-    .session2-panel{max-width:760px;margin:24px;padding:42px;border:1px solid #71dcff;border-radius:14px;background:linear-gradient(145deg,#142b63,#0b1638);color:#fff;box-shadow:0 18px 50px #0007;text-align:center}
-    .session2-panel .eyebrow{color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:1px}.session2-panel h1{margin:10px 0;font-size:clamp(28px,4vw,52px)}.session2-panel p{color:#dbe7ff;line-height:1.6}.session2-panel .status{display:inline-block;margin:16px 0;padding:8px 14px;border:1px solid #f6c453;border-radius:999px;color:#ffe29a;background:#5d451c66;font-weight:700}.session2-panel a{display:inline-block;margin-top:12px;padding:10px 15px;border:1px solid #7895d4;border-radius:6px;color:#fff;text-decoration:none;background:#132d69}.session2-panel a:hover{background:#1e438f}
-    @media(max-width:700px){:root{--side:128px}.brand b{font-size:12px}.brand span,.nav-link small{display:none}.nav-link{padding:7px 5px;font-size:10px}main{left:var(--side)}.updated{left:calc(var(--side) + 12px);bottom:52px}.controls{left:5px;width:118px;grid-template-columns:30px 1fr 30px}.controls button{height:30px}.counter{font-size:9px}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=/simple.html">
+  <title>EHEQ Monthly Review</title>
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand"><b>EHE QUALITY REVIEW</b><span>Interactive presentation webpage</span></div>
-    <a class="nav-link active" data-index="0"><span>Home</span><small>1</small></a>
-    <a class="nav-link" data-index="1"><span>Agenda</span><small>2</small></a>
-    <a class="nav-link session2-link" href="#session2"><span>Session 2</span><small>27 May 2026</small></a>
-    <div id="session2TeamNav" hidden>
-      <a class="nav-link" data-session2-index="0"><span>Home</span><small>1</small></a>
-      <a class="nav-link" data-session2-index="1"><span>Agenda</span><small>2</small></a>
-      <a class="nav-link" data-session2-index="2"><span>TOP HAT QUALITY - Atlantis H.</span><small>3–4</small></a>
-      <a class="nav-link" data-session2-index="4"><span>TOP HAT QUALITY - Atlantis M.</span><small>5–6</small></a>
-      <a class="nav-link" data-session2-index="6"><span>NEA / AE2010</span><small>7–9</small></a>
-      <a class="nav-link" data-session2-index="9"><span>FQM / EEAV</span><small>10–18</small></a>
-      <a class="nav-link" data-session2-index="18"><span>EEHD</span><small>19–29</small></a>
-      <a class="nav-link" data-session2-index="29"><span>EEQ Lesson Learned / DFMEA</span><small>30–35</small></a>
-    </div>
-    <a class="nav-link" data-index="2"><span>EEQ Dashboard</span><small>3–7</small></a>
-    <a class="nav-link" data-index="7"><span>Infield Quality - South America</span><small>12–28</small></a>
-    <a class="nav-link" data-index="24"><span>Infield Quality - IAP</span><small>29–30</small></a>
-    <a class="nav-link" data-index="26"><span>Infield Quality - China</span><small>31–33</small></a>
-    <a class="nav-link" data-index="29"><span>Infield Quality - North America</span><small>34–40</small></a>
-    <a class="nav-link" data-index="36"><span>Infield Quality - EMEA</span><small>41–59</small></a>
-    <a class="nav-link" data-index="55"><span>EEAV</span><small>64–82</small></a>
-    <a class="nav-link" href="/workspace"><span>Review workspace</span><small>Setup</small></a>
-  </aside>
-  <main><img id="slideImage" alt="EHEQ Monthly Review slide"><section class="session2-panel" id="session2Panel" hidden><div class="eyebrow">EHEQ MONTHLY REVIEW</div><h1 id="session2Title">Session 2</h1><p><strong id="session2Date">27 May 2026</strong></p><div class="status" id="session2Status">Session 2 details configured</div><p id="session2Message">No Session 2 slide files were supplied in the May 2026 presentation. The session date and agenda are recorded in the review workspace and this page is ready for the Session 2 slides when they are provided.</p><a href="/workspace">Open review workspace</a></section></main>
-  <div class="slide-number" id="slideNumber">Source slide 1</div>
-  <div class="updated" id="updatedLabel">Manager-provided May 2026 · Session 1 / Session 2</div>
-  <div class="controls"><button id="previous" aria-label="Previous slide">&#8249;</button><div class="counter" id="counter">1 / 74</div><button id="next" aria-label="Next slide">&#8250;</button></div>
-  <script>
-    const selected=[1,2,3,4,5,6,7,...Array.from({length:17},(_,i)=>i+12),29,30,31,32,33,...Array.from({length:7},(_,i)=>i+34),...Array.from({length:19},(_,i)=>i+41),...Array.from({length:19},(_,i)=>i+64)];
-    const total=selected.length;let current=0;
-    const image=document.getElementById("slideImage"),counter=document.getElementById("counter"),number=document.getElementById("slideNumber");
-    const session2Panel=document.getElementById("session2Panel"),session2Link=document.querySelector(".session2-link"),controls=document.querySelector(".controls");
-    const requestedReview=new URLSearchParams(location.search),requestedMonth=requestedReview.get("month"),requestedYear=requestedReview.get("year"),requestedSession=requestedReview.get("session"),isMaySession2=requestedMonth==="May"&&requestedYear==="2026"&&requestedSession==="2",isMaySession1=requestedMonth==="May"&&requestedYear==="2026"&&(!requestedSession||requestedSession==="1"),session2Slides=Array.from({length:35},(_,i)=>i+1),session2TeamNav=document.getElementById("session2TeamNav");
-    function showSession2Slides(index){session2Panel.hidden=true;image.style.display="block";controls.style.display="grid";current=Math.max(0,Math.min(session2Slides.length-1,index));const source=session2Slides[current],id=String(source).padStart(3,"0");image.src=`monthly-output/session2/May-2026/slides/slide-${id}.png`;counter.textContent=`${current+1} / ${session2Slides.length}`;number.textContent=`May 2026 · Session 2 · Source slide ${source}`;document.querySelectorAll(".nav-link").forEach((link)=>link.classList.toggle("active",link===session2Link));document.querySelectorAll("[data-session2-index]").forEach((link)=>link.classList.toggle("active",Number(link.dataset.session2Index)<=current&&(!link.nextElementSibling||current<Number(link.nextElementSibling.dataset.session2Index))))}
-    function showRequestedReview(){if(!requestedMonth||!requestedYear||isMaySession1)return false;const stored=localStorage.getItem(`eheq-unified-review-${requestedMonth}-${requestedYear}`);let data=null;try{data=stored?JSON.parse(stored):null}catch(error){data=null}const sessionNumber=requestedSession==="1"?"1":"2";document.title=`EHE Quality Review | ${requestedMonth} ${requestedYear} · Session ${sessionNumber}`;document.getElementById("updatedLabel").textContent=`${requestedMonth} ${requestedYear} · Session ${sessionNumber} review`;document.querySelectorAll(".nav-link").forEach((link)=>link.classList.remove("active"));session2Link.classList.add("active");document.querySelectorAll(".nav-link[data-index]").forEach((link)=>link.style.display=isMaySession2?"none":"flex");session2TeamNav.hidden=!isMaySession2;document.getElementById("session2Title").textContent=`${requestedMonth} ${requestedYear} · Session ${sessionNumber}`;document.getElementById("session2Date").textContent=sessionNumber==="2"?(data?.session2?.date||"Session 2 date not entered"):(data?.session1?.date||"Session 1 date not entered");if(isMaySession2){document.getElementById("session2Status").textContent="Manager-provided Session 2 presentation · 35 relevant slides";document.getElementById("session2Message").textContent="The 27 May 2026 Session 2 PowerPoint is filtered to its agenda teams. Session 1 is the placeholder and is not included.";showSession2Slides(0);return true}image.style.display="none";controls.style.display="none";session2Panel.hidden=false;document.getElementById("session2Status").textContent="No presentation slides available";document.getElementById("session2Message").textContent=`No generated slides are available for ${requestedMonth} ${requestedYear} Session ${sessionNumber}. Upload the Session ${sessionNumber} PowerPoint to create this presentation. The other session remains a placeholder until its own PowerPoint is uploaded.`;number.textContent=`${requestedMonth} ${requestedYear} · Session ${sessionNumber}`;return true}
-    function show(index){session2Panel.hidden=true;image.style.display="block";controls.style.display="grid";current=Math.max(0,Math.min(total-1,index));const source=selected[current],id=String(source).padStart(3,"0");image.src=`monthly-output/May-2026/slides/slide-${id}.png`;counter.textContent=`${current+1} / ${total}`;number.textContent=`Source slide ${source}`;document.querySelectorAll(".nav-link").forEach((link)=>link.classList.toggle("active",Number(link.dataset.index)<=current&&(!link.nextElementSibling||current<Number(link.nextElementSibling.dataset.index))));session2Link.classList.remove("active")}
-    function showSession2(){image.style.display="none";controls.style.display="none";session2Panel.hidden=false;number.textContent="Session 2 · 27 May 2026";document.querySelectorAll(".nav-link").forEach((link)=>link.classList.remove("active"));session2Link.classList.add("active")}
-    document.getElementById("previous").addEventListener("click",()=>isMaySession2?showSession2Slides(current-1):show(current-1));document.getElementById("next").addEventListener("click",()=>isMaySession2?showSession2Slides(current+1):show(current+1));document.querySelectorAll(".nav-link[data-index]").forEach((link)=>link.addEventListener("click",()=>show(Number(link.dataset.index))));document.querySelectorAll("[data-session2-index]").forEach((link)=>link.addEventListener("click",(event)=>{event.preventDefault();showSession2Slides(Number(link.dataset.session2Index))}));session2Link.addEventListener("click",(event)=>{event.preventDefault();isMaySession2?showSession2Slides(0):showSession2()});document.addEventListener("keydown",(event)=>{if(event.key==="ArrowLeft"&&isMaySession2)showSession2Slides(current-1);else if(event.key==="ArrowRight"&&isMaySession2)showSession2Slides(current+1);else if(event.key==="ArrowLeft"&&!session2Panel.hidden)show(0);else if(event.key==="ArrowRight"&&!session2Panel.hidden)show(current+1);else if(event.key==="ArrowLeft"&&session2Panel.hidden)show(current-1);else if(event.key==="ArrowRight"&&session2Panel.hidden)show(current+1)});if(!showRequestedReview())show(0);
-  </script>
+  <p>Opening the EHEQ Monthly Review generator...</p>
+  <p><a href="/simple.html">Open the generator</a></p>
 </body>
 </html>
