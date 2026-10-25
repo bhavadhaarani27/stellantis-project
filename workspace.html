@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EHEQ Monthly Review | Business Service</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><b>EHE QUALITY REVIEW</b><span>Monthly review business service</span></div>
+      <nav id="mainNav">
+        <button class="nav-link is-active" data-view="dashboard">Monthly dashboard</button>
+        <button class="nav-link" data-view="session1">Session 1</button>
+        <button class="nav-link" data-view="session2">Session 2</button>
+        <button class="nav-link" data-view="teams">Team slides</button>
+        <button class="nav-link" data-view="sharepoint">SharePoint import</button>
+        <button class="nav-link" data-view="preview">Presentation preview</button>
+        <button class="nav-link" data-view="history">Update history</button>
+      </nav>
+      <div class="sidebar-foot">AI-built business service · Automated workflow</div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div><p class="eyebrow">EHE QUALITY REVIEW · BUSINESS SERVICE</p><h1>Monthly Review Application</h1><p class="muted">Prepare, process, and present each monthly review from one shared workflow.</p><a class="button secondary" id="openPresentationLink" href="/">Open fullscreen presentation</a></div>
+        <div class="top-actions"><label>Month<select id="monthSelect"></select></label><label>Year<select id="yearSelect"></select></label><button class="button primary" id="saveButton">Save review</button></div>
+      </header>
+      <div id="message" class="message" role="status"></div>
+
+      <section class="view is-visible" data-view-panel="dashboard">
+        <div class="page-heading"><div><p class="eyebrow">MONTHLY REVIEW DASHBOARD</p><h2 id="dashboardTitle">January 2026</h2><p class="muted">Complete Session 1 and Session 2 for each monthly review.</p></div><div class="assistant-actions"><button class="button primary" id="managerDataButton">Load manager May 2026</button><button class="button secondary" id="newReviewButton">New month</button></div></div>
+        <div class="cards" id="dashboardCards"></div>
+        <div class="dashboard-grid">
+          <article class="panel assistant"><div class="panel-title"><div><p class="eyebrow">AUTOMATED WORKFLOW</p><h3>Monthly review guidance</h3></div><span class="badge">Business service</span></div><p id="assistantMessage">The application validates the required review details and guides the next step.</p><div class="assistant-actions"><button class="button secondary" data-view-action="session1">Configure Session 1</button><button class="button secondary" data-view-action="session2">Configure Session 2</button><button class="button secondary" data-view-action="teams">Manage teams</button></div><div class="assistant-note">This is an AI-built business application. No AI is invoked during normal use; validation, storage, processing status, and presentation navigation run through the approved application workflow.</div></article>
+          <article class="panel"><div class="panel-title"><div><p class="eyebrow">CURRENT REVIEW</p><h3>Review readiness</h3></div></div><div id="readiness"></div></article>
+        </div>
+      </section>
+
+      <section class="view" data-view-panel="session1">
+        <div class="page-heading"><div><p class="eyebrow">SESSION 1</p><h2>Session 1 details</h2><p class="muted">Enter the details supplied for Session 1.</p></div></div>
+        <article class="panel"><form id="session1Form" class="form-grid"><label>Date<input id="session1Date" type="date"></label><label class="span-2">Agenda<textarea id="session1Agenda" rows="4" placeholder="Enter the agenda supplied for Session 1"></textarea></label><fieldset class="span-3"><legend>Teams for Session 1</legend><div id="session1Teams" class="check-grid"></div><p class="empty-inline" id="noTeamsHint">No teams are configured yet. Add team names in Team slides.</p></fieldset><div class="form-actions span-3"><button class="button primary" type="submit">Save Session 1</button></div></form></article>
+      </section>
+
+      <section class="view" data-view-panel="session2">
+        <div class="page-heading"><div><p class="eyebrow">SESSION 2</p><h2>Session 2 details</h2><p class="muted">Enter the details supplied for Session 2.</p></div><a class="button secondary" id="openSession2PresentationLink" href="/?month=May&year=2026&session=2">Open Session 2 presentation</a></div>
+        <article class="panel"><form id="session2Form" class="form-grid"><label>Date<input id="session2Date" type="date"></label><label class="span-2">Agenda<textarea id="session2Agenda" rows="4" placeholder="Enter the agenda supplied for Session 2"></textarea></label><fieldset class="span-3"><legend>Teams for Session 2</legend><div id="session2Teams" class="check-grid"></div></fieldset><div class="form-actions span-3"><button class="button primary" type="submit">Save Session 2</button></div></form></article>
+      </section>
+
+      <section class="view" data-view-panel="teams">
+        <div class="page-heading"><div><p class="eyebrow">TEAM SLIDES</p><h2>Team and presentation files</h2><p class="muted">Team names are configurable; no business teams are invented by this application.</p></div></div>
+        <article class="panel"><form id="teamForm" class="inline-form"><label>Team name<input id="teamName" required placeholder="Enter a team supplied by the manager"></label><button class="button primary" type="submit">Add team</button></form><div id="teamList" class="item-list"></div></article>
+        <article class="panel"><div class="panel-title"><div><h3>Upload monthly PowerPoint</h3><p class="muted">Choose the review session before uploading. Each session gets its own presentation; the other session remains a placeholder until its PowerPoint is supplied.</p></div><div class="upload-actions"><label>Upload for<select id="uploadSession"><option value="Session 1">Session 1</option><option value="Session 2">Session 2</option></select></label><button class="button primary" id="pptImportButton">Upload PPT/PPTX</button></div></div><input id="pptInput" type="file" accept=".ppt,.pptx" hidden><div id="pptFiles" class="file-list"></div><div class="assistant-note">The shared service records the selected month and session. A production PowerPoint converter must be configured before a new upload can appear as generated slides.</div></article>
+      </section>
+
+      <section class="view" data-view-panel="sharepoint">
+        <div class="page-heading"><div><p class="eyebrow">SHAREPOINT IMPORT</p><h2>Shared monthly processing</h2><p class="muted">The production application will use your company sign-in and SharePoint storage.</p></div></div>
+        <article class="panel integration-panel"><div class="integration-icon">↗</div><div><h3>Shared service configuration</h3><p class="muted">The deployed service receives PowerPoint files, checks the month and team, records processing status, and publishes the review for authorized users.</p><button class="button secondary" data-view-action="teams">Upload a presentation</button></div></article>
+        <article class="panel"><h3>Required connector configuration</h3><ul class="plain-list"><li>SharePoint site and document-library URL</li><li>Approved Microsoft identity authentication</li><li>Permission to read eligible team PPT/PPTX files</li><li>Rules for month, session, team, revision, and duplicate detection</li></ul></article>
+      </section>
+
+      <section class="view" data-view-panel="preview">
+        <div class="page-heading"><div><p class="eyebrow">PRESENTATION PREVIEW</p><h2>Review presentation</h2><p class="muted">Preview imported generated slides using the manager-approved fullscreen layout.</p></div><button class="button primary" id="openPresentationButton">Open fullscreen preview</button></div>
+        <div id="previewSummary" class="cards"></div><article class="panel preview-panel" id="previewPanel"><div class="preview-empty">Import a generated monthly-output folder from Team slides to preview its slides here.</div></article>
+      </section>
+
+      <section class="view" data-view-panel="history">
+        <div class="page-heading"><div><p class="eyebrow">UPDATE HISTORY</p><h2>Saved changes</h2><p class="muted">Every saved monthly review keeps a local change record.</p></div></div>
+        <article class="panel"><div id="historyList" class="history-list"></div></article>
+      </section>
+    </main>
+  </div>
+
+  <div class="fullscreen" id="fullscreen" aria-hidden="true"><aside class="fullscreen-nav"><div class="brand"><b>EHE QUALITY REVIEW</b><span>Presentation preview</span></div><div id="slideNav"></div><div class="slide-controls"><button id="prevSlide">&#8249;</button><span id="slideCounter">0 / 0</span><button id="nextSlide">&#8250;</button></div><button class="button secondary" id="closeFullscreen">Exit preview</button></aside><main class="slide-stage"><div id="slideCanvas"></div></main></div>
+  <script src="app.js"></script>
+</body>
+</html>

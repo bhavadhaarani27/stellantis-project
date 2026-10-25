@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+data/
+monthly-output/
+tmp-media-*/
+attachments/
+*.pptx
+*.zip

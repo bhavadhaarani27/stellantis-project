@@ -1,0 +1,9 @@
+{
+  "name": "EHEQ Monthly Review",
+  "short_name": "EHEQ Review",
+  "start_url": "/workspace",
+  "display": "standalone",
+  "background_color": "#eef3f8",
+  "theme_color": "#071331",
+  "description": "AI-built business service for the automated EHEQ Monthly Review workflow."
+}

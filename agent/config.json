@@ -1,0 +1,9 @@
+﻿{
+  "inputFolder": "monthly-input",
+  "outputFolder": "monthly-output",
+  "template": "reference.html",
+  "pollSeconds": 15,
+  "exportWidth": 1920,
+  "exportHeight": 1080
+}
+

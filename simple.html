@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EHEQ REVIEW</title>
+  <link rel="stylesheet" href="simple.css?v=5">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <p class="eyebrow">MONTHLY REVIEW GENERATOR</p>
+      <h1>EHEQ REVIEW</h1>
+    </header>
+
+    <section class="panel setup">
+      <div class="field-row">
+        <label>Month<select id="monthSelect"></select></label>
+        <label>Year<select id="yearSelect"></select></label>
+      </div>
+      <button class="button secondary" id="clearButton" type="button">Clear selection</button>
+      <p class="hint">Choose the month and year, then upload the .pptx file for each available session. A missing session stays as a dummy placeholder.</p>
+    </section>
+
+    <section class="session-grid">
+      <article class="panel session-card">
+        <div class="session-heading"><span class="session-number">1</span><div><h2>Session 1</h2><p>Upload the first review presentation.</p></div></div>
+        <input id="session1Input" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+        <label class="datefield">Session 1 meeting date<input type="date" id="session1Date"></label>
+        <label class="datefield">Session 1 agenda (one item per line, e.g. INFQ - 30 min)<textarea id="session1Agenda" rows="4" placeholder="EHE Dashboard - 10 min&#10;INFQ - 30 min&#10;DA Robustness Project - 10 min"></textarea></label>
+        <div id="session1File" class="file-status">No Session 1 file selected.</div>
+        <div id="session1Teams" class="teams"></div>
+        <div id="session1Result" class="result dummy">Session 1 presentation will appear here.</div>
+      </article>
+      <article class="panel session-card">
+        <div class="session-heading"><span class="session-number">2</span><div><h2>Session 2</h2><p>Upload the second review presentation.</p></div></div>
+        <input id="session2Input" type="file" accept=".pptx,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+        <label class="datefield">Session 2 meeting date<input type="date" id="session2Date"></label>
+        <label class="datefield">Session 2 agenda (one item per line, e.g. INFQ - 30 min)<textarea id="session2Agenda" rows="4" placeholder="EHE Dashboard - 10 min&#10;INFQ - 30 min&#10;DA Robustness Project - 10 min"></textarea></label>
+        <div id="session2File" class="file-status">No Session 2 file selected.</div>
+        <div id="session2Teams" class="teams"></div>
+        <div id="session2Result" class="result dummy">Session 2 presentation will appear here.</div>
+      </article>
+    </section>
+
+    <section class="panel generate-panel">
+      <button class="button primary generate" id="generateButton" type="button">Generate Monthly Review</button>
+      <div id="message" class="message" role="status"></div>
+    </section>
+
+    <section class="panel manage">
+      <h2>Late teams and SharePoint links</h2>
+      <p class="hint">Open an existing review, then add a late team's PowerPoint or paste the link they sent. The web page updates automatically; other teams are not touched.</p>
+      <div class="field-row"><label>Existing review<select id="reviewSelect"><option value="">Select a generated review</option></select></label>
+      <label>Meeting date<input type="date" id="manageDate"></label></div>
+      <div class="field-row"><label>Synced SharePoint/OneDrive folder on this PC<input type="text" id="syncFolder" placeholder="C:\Users\you\Company\Team - Documents"></label><button type="button" id="syncSave">Save folder</button></div>
+      <p class="hint">In SharePoint click "Sync" on the folder once; the files then appear in a normal Windows folder. Paste that folder path here and every team row can pick its latest deck from it.</p>
+      <label class="datefield">Agenda (one item per line)<textarea id="manageAgenda" rows="4"></textarea></label><button type="button" id="agendaSave">Save agenda</button>
+      <div id="manageMessage" class="message" role="status"></div>
+      <div id="teamTable"></div>
+    </section>
+    <footer><a href="/workspace">Open detailed workspace</a><span>Runs locally · No AI or IT integration is required</span></footer>
+  </main>
+  <script src="simple-app.js"></script>
+</body>
+</html>
